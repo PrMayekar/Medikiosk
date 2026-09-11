@@ -1,0 +1,192 @@
+{# AI Intake Card — rendered inside demographics.php secondary column
+   Extends card_base.html.twig (OpenEMR's standard collapsible card shell).
+
+   Variables passed from Bootstrap::onSectionRender():
+     pid             int
+     aiSession       array|null  — latest ai_intake_session row, or null if none
+     webroot         string
+     moduleWebPath   string      — webroot + /interface/modules/custom_modules/oe-module-ai-intake
+#}
+
+{% extends "patient/card/card_base.html.twig" %}
+
+{% block content %}
+
+{# ════════════════════════════════════════════════════════════════════════════
+   Shared card styles — scoped with ai-intake-card prefix to avoid leaking
+   ═══════════════════════════════════════════════════════════════════════════ #}
+<style>
+.aic-meta-pill  { display:inline-flex;align-items:center;gap:4px;border-radius:6px;
+                  padding:3px 10px;font-size:.75rem;font-weight:700; }
+.aic-section    { border-top:1px solid #e8f0f5;margin-top:18px;padding-top:16px; }
+.aic-section-title { font-size:.78rem;font-weight:700;text-transform:uppercase;
+                     letter-spacing:.05em;color:#8899a6;margin-bottom:12px; }
+.aic-box        { background:#f8fcff;border:1.5px solid #d0e8f5;border-radius:10px;
+                  padding:14px 16px;font-size:.86rem;line-height:1.75;color:#1a2a3a;
+                  white-space:pre-wrap;font-family:'Segoe UI',system-ui,sans-serif;
+                  max-height:260px;overflow-y:auto; }
+.aic-box::-webkit-scrollbar{width:4px}
+.aic-box::-webkit-scrollbar-thumb{background:#c0d8e8;border-radius:2px}
+.aic-textarea   { width:100%;min-height:180px;padding:12px 14px;box-sizing:border-box;
+                  border:1.5px solid #d0e8f5;border-radius:8px;font-size:.86rem;
+                  font-family:inherit;color:#1a2a3a;background:#fff;resize:vertical;
+                  outline:none;line-height:1.7; }
+.aic-textarea:focus { border-color:#2c9cd4;box-shadow:0 0 0 3px rgba(44,156,212,.1); }
+.aic-btn        { padding:9px 20px;border:none;border-radius:8px;font-size:.84rem;
+                  font-weight:700;cursor:pointer;transition:.2s; }
+.aic-btn-primary{ background:linear-gradient(135deg,#1a6fa0,#2c9cd4);color:#fff;
+                  box-shadow:0 3px 10px rgba(44,156,212,.3); }
+.aic-btn-primary:hover{ box-shadow:0 4px 16px rgba(44,156,212,.45); }
+.aic-btn-primary:disabled{ opacity:.4;cursor:not-allowed; }
+.aic-btn-danger { background:linear-gradient(135deg,#c62828,#e53935);color:#fff;
+                  box-shadow:0 3px 10px rgba(198,40,40,.3); }
+.aic-btn-ghost  { background:transparent;color:#2c9cd4;
+                  border:1.5px solid #2c9cd4; }
+.aic-alert      { border-radius:7px;padding:9px 13px;font-size:.82rem;
+                  display:none;align-items:center;gap:8px;margin-top:10px; }
+.aic-alert.show { display:flex; }
+.aic-alert-err  { background:#fdecea;color:#b71c1c;border:1px solid #f5c6c6; }
+.aic-alert-ok   { background:#e8f5e9;color:#2e7d32;border:1px solid #a5d6a7; }
+
+{# Recording dot pulse animation #}
+@keyframes aic-pulse-red {
+  0%,100% { transform:scale(1);opacity:1; }
+  50%      { transform:scale(1.35);opacity:.6; }
+}
+.aic-rec-dot {
+  display:inline-block;width:10px;height:10px;border-radius:50%;
+  background:#e53935;margin-right:6px;vertical-align:middle;
+  animation:aic-pulse-red 1.2s ease-in-out infinite;
+}
+@keyframes aic-spin {
+  to { transform:rotate(360deg); }
+}
+.aic-spinner {
+  display:inline-block;width:16px;height:16px;border-radius:50%;vertical-align:middle;
+  border:2.5px solid rgba(44,156,212,.2);border-top-color:#2c9cd4;
+  animation:aic-spin .75s linear infinite;margin-right:6px;
+}
+</style>
+
+{% if aiSession is null %}
+    {# ── Empty state ──────────────────────────────────────────────────────── #}
+    <div style="padding:18px 12px;color:#8899a6;font-size:.87rem;text-align:center;">
+        <span style="font-size:1.6rem;display:block;margin-bottom:8px;">🎙️</span>
+        No AI Intake session found for this patient yet.
+    </div>
+
+{% else %}
+
+{# ════════════════════════════════════════════════════════════════════════════
+   SECTION A: Pre-Visit Intake Summary
+   ═══════════════════════════════════════════════════════════════════════════ #}
+
+{# ── Red-flag banner ─────────────────────────────────────────────────────── #}
+{% if aiSession.red_flag %}
+<div style="background:#ffebee;border:1.5px solid #ef9a9a;border-radius:8px;
+    padding:10px 14px;margin-bottom:14px;display:flex;align-items:center;gap:10px;">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="#c62828">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+    </svg>
+    <span style="font-weight:700;color:#c62828;font-size:.88rem;">
+        ⚠ Priority Alert: Possible clinical red flag detected. Please review immediately.
+    </span>
+</div>
+{% endif %}
+
+{# ── Session meta pills ───────────────────────────────────────────────────── #}
+<div style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;">
+    <span class="aic-meta-pill" style="background:#e3f2fd;color:#1565c0;">
+        🏥 {{ aiSession.pathway|capitalize }}
+    </span>
+    <span class="aic-meta-pill" style="background:#f3f3f3;color:#555;font-weight:400;">
+        📅 {{ aiSession.created_at|date('d M Y, h:i A') }}
+    </span>
+    {% if aiSession.openemr_encounter_id %}
+    <span class="aic-meta-pill" style="background:#e8f5e9;color:#2e7d32;">
+        ✓ Enc #{{ aiSession.openemr_encounter_id }}
+    </span>
+    {% endif %}
+</div>
+
+{# ── Pre-visit summary box ─────────────────────────────────────────────────── #}
+{% if aiSession.summary_text %}
+<div class="aic-section-title">Pre-Visit Intake Summary</div>
+<div id="ai-intake-summary-display" class="aic-box">{{ aiSession.summary_text }}</div>
+
+{# ── Edit pre-visit summary ────────────────────────────────────────────────── #}
+<details id="ai-intake-edit-section" style="margin-top:10px;">
+    <summary style="cursor:pointer;font-size:.8rem;font-weight:700;color:#2c9cd4;padding:5px 0;">
+        ✏ Edit Pre-Visit Note
+    </summary>
+    <div style="margin-top:10px;">
+        <textarea id="ai-intake-edit-textarea" class="aic-textarea">{{ aiSession.summary_text }}</textarea>
+        <div id="ai-intake-edit-alert" class="aic-alert aic-alert-err"></div>
+        <div style="display:flex;gap:10px;align-items:center;margin-top:10px;">
+            <button id="ai-intake-save-btn" class="aic-btn aic-btn-primary"
+                    onclick="aiIntakeSaveNote({{ aiSession.id }}, '{{ webroot }}')">
+                Confirm &amp; Save
+            </button>
+            <span id="ai-intake-save-status" style="font-size:.8rem;color:#2e7d32;display:none;">✓ Saved</span>
+        </div>
+    </div>
+</details>
+
+{% else %}
+<p style="font-size:.86rem;color:#8899a6;font-style:italic;">Pre-visit summary not yet generated.</p>
+{% endif %}
+
+{# ════════════════════════════════════════════════════════════════════════════
+<div class="aic-section">
+    <div class="aic-section-title">🎙 Full-Screen Ambient Consultation</div>
+    <div style="text-align:center; padding: 20px 0;">
+        <p style="font-size:0.86rem; color:#4a6070; margin-bottom: 16px;">
+            Start a live ambient listening session to automatically transcribe the consultation and generate a SOAP note.
+        </p>
+        <a href="{{ moduleWebPath }}/public/ambient-consult.php?pid={{ pid }}&session={{ aiSession.id }}" target="_blank" class="aic-btn aic-btn-primary" style="text-decoration:none; display:inline-block; font-size:1rem; padding: 12px 24px;">
+            ▶ Start Ambient Consultation
+        </a>
+    </div>
+</div>{# end SECTION B #}
+
+{% endif %}{# end if aiSession #}
+
+<script>
+/* ============================================================
+   A. Pre-visit note edit (from Step 4)
+   ============================================================ */
+function aiIntakeSaveNote(sessionId, webroot) {
+    var btn      = document.getElementById('ai-intake-save-btn');
+    var alertEl  = document.getElementById('ai-intake-edit-alert');
+    var statusEl = document.getElementById('ai-intake-save-status');
+    var text     = document.getElementById('ai-intake-edit-textarea').value.trim();
+    if (!text) { alertEl.classList.add('show'); alertEl.textContent = 'Note cannot be empty.'; return; }
+    alertEl.classList.remove('show');
+    btn.disabled = true; btn.textContent = 'Saving…';
+    fetch(webroot + '/interface/modules/custom_modules/oe-module-ai-intake/api/update-note.php', {
+        method: 'POST', headers: {'Content-Type':'application/json'},
+        body: JSON.stringify({session_id: sessionId, summary_text: text}),
+        credentials: 'same-origin',
+    })
+    .then(function(r){return r.json();})
+    .then(function(d){
+        btn.disabled = false; btn.textContent = 'Confirm & Save';
+        if (d.success) {
+            document.getElementById('ai-intake-summary-display').textContent = text;
+            statusEl.style.display = 'inline';
+            setTimeout(function(){statusEl.style.display='none';}, 3000);
+        } else {
+            alertEl.classList.add('show');
+            alertEl.textContent = d.error || 'Failed to save. Please try again.';
+        }
+    })
+    .catch(function(){
+        btn.disabled=false; btn.textContent='Confirm & Save';
+        alertEl.classList.add('show');
+        alertEl.textContent = 'Network error. Please try again.';
+    });
+}
+
+/* ambient consult logic moved to ambient-consult.php */</script>
+
+{% endblock %}

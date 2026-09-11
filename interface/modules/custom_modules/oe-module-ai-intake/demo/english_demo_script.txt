@@ -1,0 +1,107 @@
+================================================================================
+  AI INTAKE KIOSK — ENGLISH DEMO SCRIPT
+  Patient Persona: Ramesh Patil, 58 years, Male — New Allopathic Patient
+  (Kidney Disease / Chronic Kidney Disease theme)
+================================================================================
+
+Follow these steps exactly. Each section shows WHAT THE SCREEN SHOWS first,
+then YOUR SPOKEN ANSWER (in quotes) or your tap action.
+
+────────────────────────────────────────────────────────────────────────────────
+SCREEN 1: WELCOME — Language Selection
+────────────────────────────────────────────────────────────────────────────────
+ACTION: Tap the "English" tile.
+
+────────────────────────────────────────────────────────────────────────────────
+SCREEN 2: MODE SELECTION
+────────────────────────────────────────────────────────────────────────────────
+ACTION: Tap "Speak to Continue" (or "Tap to Continue" if demonstrating tap mode).
+
+────────────────────────────────────────────────────────────────────────────────
+SCREEN 3: LOGIN — New Patient Tab
+────────────────────────────────────────────────────────────────────────────────
+TAP MODE:
+  Full Name:    Type "Ramesh Patil"
+  Age:          Type "58"
+  Gender:       Select "Male"
+  Phone:        Type "9876543210"
+  ABHA ID:      Leave blank
+  [Tap "Send OTP"]
+  OTP:          Type "123456"
+  [Tap "Verify & Register"]
+
+VOICE MODE:
+  Mic 1 - Full Name:   SAY -> "Ramesh Patil"
+  Mic 2 - Age:         SAY -> "fifty eight"
+  Mic 3 - Gender:      SAY -> "male"
+  Mic 4 - Phone:       SAY -> "nine eight seven six five four three two one zero"
+  Mic 5 - OTP:         SAY -> "one two three four five six"
+
+────────────────────────────────────────────────────────────────────────────────
+THE CONTINUOUS VOICE LOOP (Consent, Pathway, Q&A)
+────────────────────────────────────────────────────────────────────────────────
+ACTION: You will be taken to the "Voice Intake" screen. 
+        Tap the pulsing microphone ONCE to begin. From here, do not touch the screen.
+
+VOICE AI: "Informed Consent: We will record your voice to generate a clinical summary for your doctor. Do you agree? Say yes or no."
+YOU SAY:  "Yes" or "I agree"
+
+VOICE AI: "Would you prefer an Allopathic or Ayurvedic consultation? Say Allopathic or Ayurvedic."
+YOU SAY:  "Allopathic"
+
+VOICE AI: "What is your main health concern today?"
+YOU SAY:  "I have been experiencing swelling in my legs and feet, and I feel very tired all the time. My urine output has also reduced."
+
+VOICE AI: "Got it. How long have you been experiencing this?"
+YOU SAY:  "About three weeks now."
+
+VOICE AI: "Got it. On a scale of 1 to 10, how severe is it right now?"
+YOU SAY:  "Seven."
+
+VOICE AI: "Got it. What makes it worse?"
+YOU SAY:  "Walking and standing for a long time makes the swelling worse. Eating salty food also seems to increase the swelling."
+
+VOICE AI: "Got it. What makes it better, or provides relief?"
+YOU SAY:  "Lying down and keeping my feet elevated gives some relief. Drinking less water also seems to help with the swelling."
+
+VOICE AI: "Got it. Do you have any past medical conditions we should know about?"
+YOU SAY:  "Yes, I have Type 2 diabetes for the past 12 years and hypertension for the last 8 years. I was recently told my kidney function is not normal."
+
+VOICE AI: "Got it. Are you currently taking any medications, or do you have any known allergies?"
+YOU SAY:  "I take Metformin 500 mg twice daily for diabetes and Amlodipine 5 mg once a day for blood pressure. I am allergic to Sulfa drugs."
+
+VOICE AI: "Thank you! I have all your answers. Submitting now."
+(The screen will automatically advance to Document Upload)
+
+────────────────────────────────────────────────────────────────────────────────
+SCREEN 7: DOCUMENT UPLOAD
+────────────────────────────────────────────────────────────────────────────────
+ACTION: Upload a lab report image if available (optional).
+        Or tap "Skip".
+
+────────────────────────────────────────────────────────────────────────────────
+SCREEN 8: SUMMARY — Review
+────────────────────────────────────────────────────────────────────────────────
+EXPECTED SUMMARY OUTPUT (matches exactly what you said above):
+
+  Chief Complaint:   Swelling in legs/feet, fatigue, reduced urine output
+  Duration:          3 weeks
+  Severity:          7/10
+  Aggravating:       Walking, standing, salty food
+  Relieving:         Elevation of legs, fluid restriction
+  Past History:      Type 2 diabetes (12 yrs), hypertension (8 yrs),
+                     reduced kidney function (recent finding)
+  Medications:       Metformin 500mg BD, Amlodipine 5mg OD
+  Allergies:         Sulfa drugs
+
+ACTION: Tap "Confirm & Send to Doctor"
+
+────────────────────────────────────────────────────────────────────────────────
+SCREEN 9: QUEUE NUMBER
+────────────────────────────────────────────────────────────────────────────────
+NOTE: A queue number will be displayed. Show this to the audience.
+      Tap "Finish & Return Home" to end the demo.
+
+================================================================================
+END OF ENGLISH DEMO SCRIPT
+================================================================================

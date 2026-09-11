@@ -1,0 +1,110 @@
+================================================================================
+  AI INTAKE KIOSK — MARATHI DEMO SCRIPT
+  Patient Persona: Ramesh Patil, 58 varsh, Purush — Nava Alopath Rugna
+  (Kirkin Vikaar / Chronic Kidney Disease theme)
+================================================================================
+
+Khali dilelyaa pratyeka padavyavar kaay bolayche te dakhalele aahe.
+(Below, each step shows what to say at that screen.)
+
+URL: http://localhost:8300/interface/modules/custom_modules/oe-module-ai-intake/public/welcome.php
+
+================================================================================
+SCREEN 1: WELCOME — BHASAA NIVAD
+================================================================================
+KRIYA: "Marathi" tile var tap kara.
+
+================================================================================
+SCREEN 2: MODE NIVAD
+================================================================================
+KRIYA: "Bolun Suru Kara" (mic/voice mode) var tap kara.
+       KINVA: "Botane Suru Kara" (tap mode) nimhanya karita.
+
+================================================================================
+SCREEN 3: LOGIN — Nava Rugna Tab
+================================================================================
+
+TAP MODE:
+  Purn Nav:    "Ramesh Patil" lihaa
+  Vay:         "58" lihaa
+  Linga:       "Purush" nivdaa
+  Phone:       "9876543210" lihaa
+  [OTP Pathvaa tap kara]
+  OTP:         "123456" lihaa
+  [Satyyapan Kara var tap kara]
+
+VOICE MODE (mic var tap kara, mag bolaa):
+  Mic 1 - Purn Nav:    "Ramesh Patil" BOLAA
+  Mic 2 - Vay:         "aththawwan" BOLAA   [58]
+  Mic 3 - Linga:       "purush" BOLAA
+  Mic 4 - Phone:       "nav aath saat saha panach char teen don ek shunya" BOLAA
+  Mic 5 - OTP:         "ek don teen char panach saha" BOLAA
+
+================================================================================
+THE CONTINUOUS VOICE LOOP (Consent, Pathway, Q&A) / SAKHAL BOLANYACHI PRAKRIYA
+================================================================================
+KRIYA: Tumhala "Voice Intake" screen var ghevun jaanyat yeil. 
+       Mic chya chitracha (orb) var ekda tap kara. Tyanantar screen la sparsha karu naka.
+
+VOICE AI: "माहिती आणि संमती: आम्ही तुमचे बोलणे रेकॉर्ड करू जेणेकरून डॉक्टरांसाठी सारांश तयार करता येईल. तुम्ही सहमत आहात का? हो किंवा नाही सांगा."
+TUMHI BOLAA:  "Ho" kinva "Mala manya aahe"
+
+VOICE AI: "तुम्हाला ॲलोपॅथिक उपचार हवे आहेत की आयुर्वेदिक? ॲलोपॅथिक किंवा आयुर्वेदिक असे सांगा."
+TUMHI BOLAA:  "Alopathik"
+
+VOICE AI: "आज तुमची मुख्य आरोग्य समस्या काय आहे?"
+TUMHI BOLAA:  "Mazyaa paayaat aani paayaanche ghote sujalelaa aahe. Mala khup thakva vaatato. Laghavi kam hote aahe."
+
+VOICE AI: "ठीक आहे. तुम्हाला हे किती दिवसांपासून होत आहे?"
+TUMHI BOLAA:  "Sadharan teen aathavdyaanpaasun."
+
+VOICE AI: "ठीक आहे. १ ते १० च्या प्रमाणात, सध्या हे किती तीव्र आहे?"
+TUMHI BOLAA:  "Saat."
+
+VOICE AI: "ठीक आहे. कोणत्या गोष्टी त्रास वाढवतात?"
+TUMHI BOLAA:  "Jast wakat ubhe raahilyo ki sujaane vaadhhate. Khaarakha jevan kelyo ki pan sujaane vaadhhate."
+
+VOICE AI: "ठीक आहे. कोणत्या गोष्टींनी आराम मिळतो?"
+TUMHI BOLAA:  "Paay uchalun thewlyo ki bara vaatate. Paani kami pyalyo tari thoda aaraam milatoo."
+
+VOICE AI: "ठीक आहे. तुम्हाला कोणतेही जुने आजार आहेत का?"
+TUMHI BOLAA:  "Ho. Mala baraa warshaanpaasun Type 2 diabetes aahe aani aath warshaanpaasun raktadaab aahe."
+
+VOICE AI: "ठीक आहे. तुम्ही सध्या कोणती औषधे घेत आहात किंवा कोणत्या गोष्टींची ॲलर्जी आहे का?"
+TUMHI BOLAA:  "Ho. Diabetes saathi Metformin 500 mg don wela gheato. Raktadaabhaasaathi Amlodipine 5 mg ek wela gheato. Mala Sulpha aushadhaaanchi allergi aahe."
+
+VOICE AI: "धन्यवाद! तुमची माहिती सबमिट केली जात आहे."
+(Screen aapo-aap Document Upload var jail)
+
+================================================================================
+SCREEN 7: DASTAWEJ UPLOAD (DOCUMENTS)
+================================================================================
+KRIYA: Lab report uplod kara (parayaayi).
+       KINVA: "Sodaa" (Skip) tap kara.
+
+================================================================================
+SCREEN 8: SARANSH AAHE — AVLOKHAN (SUMMARY REVIEW)
+================================================================================
+APEKSHIT SARANSHA (tumhi jo bolalat tyaashi sutt hote):
+
+  Mukhya Samasya:    Paayaat suj, thakva, kami laghavi
+  Kaalaawadhi:       Teen aathavde
+  Tivrataa:          7/10
+  Tras Vaadhawaane:  Ubhe raahane, khaarakha jevaan
+  Aaraam Milaane:    Paay uchalun thewane, kami drawa
+  Juna Aajaar:       Type 2 Diabetes (12 varsh), raktadaab (8 varsh),
+                     Marutpind kaaryakshama naahi (nawa nirdaan)
+  Aushadhe:          Metformin 500mg din doni wela, Amlodipine 5mg ekdaa
+  Allergi:           Sulpha Aushadhe
+
+KRIYA: "Pushthi Kara v Doctoranna Pathvaa" tap kara.
+
+================================================================================
+SCREEN 9: RANG KRAMA ANKA (QUEUE NUMBER)
+================================================================================
+NONDH: Rang krama anka diseel. Prodymachya prashraka na daakhvaa.
+       "Samaapt Kara v Gheri Jaa" var tap kara.
+
+================================================================================
+END OF MARATHI DEMO SCRIPT / MARATHI DEMO SCRIPT SAMAAPT
+================================================================================

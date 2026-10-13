@@ -6124,20 +6124,20 @@
         },
         {
             "name": "myclabs/deep-copy",
-            "version": "1.13.4",
+            "version": "1.14.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/myclabs/DeepCopy.git",
-                "reference": "07d290f0c47959fd5eed98c95ee5602db07e0b6a"
+                "reference": "8680aa248f8e07bc8fb43f56f0f5fc77a0c96aae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/07d290f0c47959fd5eed98c95ee5602db07e0b6a",
-                "reference": "07d290f0c47959fd5eed98c95ee5602db07e0b6a",
+                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/8680aa248f8e07bc8fb43f56f0f5fc77a0c96aae",
+                "reference": "8680aa248f8e07bc8fb43f56f0f5fc77a0c96aae",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.1 || ^8.0"
+                "php": "^8.0"
             },
             "conflict": {
                 "doctrine/collections": "<1.6.8",
@@ -6172,28 +6172,28 @@
             ],
             "support": {
                 "issues": "https://github.com/myclabs/DeepCopy/issues",
-                "source": "https://github.com/myclabs/DeepCopy/tree/1.13.4"
+                "source": "https://github.com/myclabs/DeepCopy/tree/1.14.0"
             },
             "funding": [
                 {
-                    "url": "https://tidelift.com/funding/github/packagist/myclabs/deep-copy",
-                    "type": "tidelift"
+                    "url": "https://github.com/mnapoli",
+                    "type": "github"
                 }
             ],
-            "time": "2025-08-01T08:46:24+00:00"
+            "time": "2026-08-11T10:17:44+00:00"
         },
         {
             "name": "nikic/php-parser",
-            "version": "v5.8.0",
+            "version": "v5.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "044a6a392ff8ad0d61f14370a5fbbd0a0107152f"
+                "reference": "9e33da9553fe7786f0962b35f4e4ecf01be89def"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/044a6a392ff8ad0d61f14370a5fbbd0a0107152f",
-                "reference": "044a6a392ff8ad0d61f14370a5fbbd0a0107152f",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/9e33da9553fe7786f0962b35f4e4ecf01be89def",
+                "reference": "9e33da9553fe7786f0962b35f4e4ecf01be89def",
                 "shasum": ""
             },
             "require": {
@@ -6235,9 +6235,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nikic/PHP-Parser/issues",
-                "source": "https://github.com/nikic/PHP-Parser/tree/v5.8.0"
+                "source": "https://github.com/nikic/PHP-Parser/tree/v5.9.0"
             },
-            "time": "2026-07-04T14:30:18+00:00"
+            "time": "2026-09-13T18:51:52+00:00"
         },
         {
             "name": "nyholm/psr7",
@@ -14357,16 +14357,16 @@
         },
         {
             "name": "nette/neon",
-            "version": "v3.4.7",
+            "version": "v3.4.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/neon.git",
-                "reference": "cc96bf5264d721d0c102bb976272d3d001a23e65"
+                "reference": "9009f99ce1396b366a88ca16c90177148352b7d3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/neon/zipball/cc96bf5264d721d0c102bb976272d3d001a23e65",
-                "reference": "cc96bf5264d721d0c102bb976272d3d001a23e65",
+                "url": "https://api.github.com/repos/nette/neon/zipball/9009f99ce1396b366a88ca16c90177148352b7d3",
+                "reference": "9009f99ce1396b366a88ca16c90177148352b7d3",
                 "shasum": ""
             },
             "require": {
@@ -14422,9 +14422,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nette/neon/issues",
-                "source": "https://github.com/nette/neon/tree/v3.4.7"
+                "source": "https://github.com/nette/neon/tree/v3.4.8"
             },
-            "time": "2026-01-04T08:39:50+00:00"
+            "time": "2026-05-11T21:34:00+00:00"
         },
         {
             "name": "opis/json-schema",
@@ -14940,11 +14940,11 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "2.2.7",
+            "version": "2.3.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/692db47b9dddb0487934e5236e77d48594aef921",
-                "reference": "692db47b9dddb0487934e5236e77d48594aef921",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/6155239b488e95d26d1ebd95c6b4bb294d7f09db",
+                "reference": "6155239b488e95d26d1ebd95c6b4bb294d7f09db",
                 "shasum": ""
             },
             "require": {
@@ -15000,7 +15000,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-07-29T17:39:32+00:00"
+            "time": "2026-10-08T21:09:11+00:00"
         },
         {
             "name": "phpstan/phpstan-deprecation-rules",
@@ -15055,22 +15055,22 @@
         },
         {
             "name": "phpstan/phpstan-phpunit",
-            "version": "2.0.18",
+            "version": "2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan-phpunit.git",
-                "reference": "f5dc20ff8082d02339b60cab68ec3eb0d859fb30"
+                "reference": "8d16b8478e523a47f8c02e83bce8981b5b5a3b03"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan-phpunit/zipball/f5dc20ff8082d02339b60cab68ec3eb0d859fb30",
-                "reference": "f5dc20ff8082d02339b60cab68ec3eb0d859fb30",
+                "url": "https://api.github.com/repos/phpstan/phpstan-phpunit/zipball/8d16b8478e523a47f8c02e83bce8981b5b5a3b03",
+                "reference": "8d16b8478e523a47f8c02e83bce8981b5b5a3b03",
                 "shasum": ""
             },
             "require": {
                 "phar-io/version": "^3.2",
                 "php": "^7.4 || ^8.0",
-                "phpstan/phpstan": "^2.2.3"
+                "phpstan/phpstan": "^2.3.0"
             },
             "conflict": {
                 "phpunit/phpunit": "<7.0"
@@ -15107,27 +15107,27 @@
             ],
             "support": {
                 "issues": "https://github.com/phpstan/phpstan-phpunit/issues",
-                "source": "https://github.com/phpstan/phpstan-phpunit/tree/2.0.18"
+                "source": "https://github.com/phpstan/phpstan-phpunit/tree/2.1.1"
             },
-            "time": "2026-07-04T12:16:09+00:00"
+            "time": "2026-10-06T18:12:32+00:00"
         },
         {
             "name": "phpstan/phpstan-strict-rules",
-            "version": "2.0.12",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan-strict-rules.git",
-                "reference": "2bc5ae19ae965663b62ac907ee6342c3903ec93b"
+                "reference": "24ec51589f896f048d0d36de373d993b5cf71786"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan-strict-rules/zipball/2bc5ae19ae965663b62ac907ee6342c3903ec93b",
-                "reference": "2bc5ae19ae965663b62ac907ee6342c3903ec93b",
+                "url": "https://api.github.com/repos/phpstan/phpstan-strict-rules/zipball/24ec51589f896f048d0d36de373d993b5cf71786",
+                "reference": "24ec51589f896f048d0d36de373d993b5cf71786",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.4 || ^8.0",
-                "phpstan/phpstan": "^2.1.52"
+                "phpstan/phpstan": "^2.3"
             },
             "require-dev": {
                 "php-parallel-lint/php-parallel-lint": "^1.2",
@@ -15159,9 +15159,9 @@
             ],
             "support": {
                 "issues": "https://github.com/phpstan/phpstan-strict-rules/issues",
-                "source": "https://github.com/phpstan/phpstan-strict-rules/tree/2.0.12"
+                "source": "https://github.com/phpstan/phpstan-strict-rules/tree/2.1.0"
             },
-            "time": "2026-07-19T07:24:06+00:00"
+            "time": "2026-10-01T21:30:37+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -15512,16 +15512,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "11.5.56",
+            "version": "11.5.57",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "5f83edffa6967c3db468d48a695ec7bcb02e9256"
+                "reference": "36b75bf56a8535623f5b3e24b27ea1823759da1a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/5f83edffa6967c3db468d48a695ec7bcb02e9256",
-                "reference": "5f83edffa6967c3db468d48a695ec7bcb02e9256",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/36b75bf56a8535623f5b3e24b27ea1823759da1a",
+                "reference": "36b75bf56a8535623f5b3e24b27ea1823759da1a",
                 "shasum": ""
             },
             "require": {
@@ -15531,7 +15531,7 @@
                 "ext-libxml": "*",
                 "ext-mbstring": "*",
                 "ext-xmlwriter": "*",
-                "myclabs/deep-copy": "^1.13.4",
+                "myclabs/deep-copy": "^1.14.0",
                 "phar-io/manifest": "^2.0.4",
                 "phar-io/version": "^3.2.1",
                 "php": ">=8.2",
@@ -15594,7 +15594,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/11.5.56"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/11.5.57"
             },
             "funding": [
                 {
@@ -15602,7 +15602,7 @@
                     "type": "other"
                 }
             ],
-            "time": "2026-07-06T14:52:39+00:00"
+            "time": "2026-10-05T05:47:54+00:00"
         },
         {
             "name": "psy/psysh",
@@ -15788,30 +15788,27 @@
         },
         {
             "name": "rector/rector",
-            "version": "2.5.9",
+            "version": "2.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rectorphp/rector.git",
-                "reference": "858b1fb95d94f658b54c01080bf7b6ae97274536"
+                "reference": "4d6a39b7fff302cac0ce90cd959a53c2f6a32776"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rectorphp/rector/zipball/858b1fb95d94f658b54c01080bf7b6ae97274536",
-                "reference": "858b1fb95d94f658b54c01080bf7b6ae97274536",
+                "url": "https://api.github.com/repos/rectorphp/rector/zipball/4d6a39b7fff302cac0ce90cd959a53c2f6a32776",
+                "reference": "4d6a39b7fff302cac0ce90cd959a53c2f6a32776",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.4|^8.0",
-                "phpstan/phpstan": "^2.2.6"
+                "phpstan/phpstan": "^2.3.0"
             },
             "conflict": {
                 "rector/rector-doctrine": "*",
                 "rector/rector-downgrade-php": "*",
                 "rector/rector-phpunit": "*",
                 "rector/rector-symfony": "*"
-            },
-            "suggest": {
-                "ext-dom": "To manipulate phpunit.xml via the custom-rule command"
             },
             "bin": [
                 "bin/rector"
@@ -15836,7 +15833,7 @@
             ],
             "support": {
                 "issues": "https://github.com/rectorphp/rector/issues",
-                "source": "https://github.com/rectorphp/rector/tree/2.5.9"
+                "source": "https://github.com/rectorphp/rector/tree/2.7.0"
             },
             "funding": [
                 {
@@ -15844,7 +15841,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-07-30T22:10:00+00:00"
+            "time": "2026-10-06T08:46:45+00:00"
         },
         {
             "name": "roave/security-advisories",
@@ -17936,21 +17933,21 @@
         },
         {
             "name": "shipmonk/phpstan-baseline-per-identifier",
-            "version": "2.3.0",
+            "version": "2.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/shipmonk-rnd/phpstan-baseline-per-identifier.git",
-                "reference": "b997803a60f1f604b9fe0aed5d6d1edead010190"
+                "reference": "9a4b5c3e8fa0af801fc575ab80cd6d657a38ba8e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/shipmonk-rnd/phpstan-baseline-per-identifier/zipball/b997803a60f1f604b9fe0aed5d6d1edead010190",
-                "reference": "b997803a60f1f604b9fe0aed5d6d1edead010190",
+                "url": "https://api.github.com/repos/shipmonk-rnd/phpstan-baseline-per-identifier/zipball/9a4b5c3e8fa0af801fc575ab80cd6d657a38ba8e",
+                "reference": "9a4b5c3e8fa0af801fc575ab80cd6d657a38ba8e",
                 "shasum": ""
             },
             "require": {
                 "nette/neon": "^3.3.3 || ^4.0",
-                "php": "^7.4 || ^8.0",
+                "php": "^8.1",
                 "phpstan/phpstan": "^2"
             },
             "require-dev": {
@@ -17958,12 +17955,12 @@
                 "ergebnis/composer-normalize": "^2.45",
                 "phpstan/phpstan-phpunit": "2.0.6",
                 "phpstan/phpstan-strict-rules": "2.0.4",
-                "phpunit/phpunit": "9.6.23",
+                "phpunit/phpunit": "^10.5.46",
                 "shipmonk/coding-standard": "^0.2.0",
                 "shipmonk/composer-dependency-analyser": "1.8.3",
-                "shipmonk/dead-code-detector": "^0.11.0",
+                "shipmonk/dead-code-detector": "^1.0",
                 "shipmonk/name-collision-detector": "2.1.1",
-                "shipmonk/phpstan-rules": "4.1.2"
+                "shipmonk/phpstan-rules": "4.3.5"
             },
             "bin": [
                 "bin/split-phpstan-baseline"
@@ -17995,9 +17992,9 @@
             ],
             "support": {
                 "issues": "https://github.com/shipmonk-rnd/phpstan-baseline-per-identifier/issues",
-                "source": "https://github.com/shipmonk-rnd/phpstan-baseline-per-identifier/tree/2.3.0"
+                "source": "https://github.com/shipmonk-rnd/phpstan-baseline-per-identifier/tree/2.4.0"
             },
-            "time": "2025-12-08T10:45:21+00:00"
+            "time": "2026-09-29T08:38:20+00:00"
         },
         {
             "name": "slevomat/coding-standard",
